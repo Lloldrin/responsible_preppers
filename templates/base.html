@@ -30,6 +30,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8e5393239d.js" crossorigin="anonymous"></script>
+
     {% endblock %}
 
     {% block extra_js %}
@@ -42,13 +44,84 @@
 <body>
 
     <header class="container-fluid fixed-top">
+
+        <div class="row header-row my-3">
+            <div class="col-4 header-logo-container d-none d-md-block">
+                <a href="{% url 'home' %}">
+                    <img src="\media\LogoText_001.png" class="header-row-logo float-right d-block"
+                        alt="site logo, Responsible Preppers">
+                </a>
+            </div>
+            <div class="col-4 header-search-bar">
+                <form method="GET">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-black rounded-0" type="text" name="hq"
+                            placeholder="Search product">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4 header-cart">
+
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+
+                    <li class="list-inline-item dropdown">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a href="" class="dropdown-item">Product Management</a>
+                            {% endif %}
+                            <a href="" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
+
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                    $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-4 ">
+            <div class="col-12 col-sm-6 col-lg-4 ">
                 <div class="my-3 text-center">
-                    <img src="\media\LogoText_001.png" class="img-fluid mx-auto d-block" alt="...">
+                    <img src="\media\LogoText_001.png" class="img-fluid mx-auto d-block"
+                        alt="site logo, Responsible Preppers">
                 </div>
             </div>
         </div>
+
     </header>
 
     {% if messages %}

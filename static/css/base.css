@@ -1,0 +1,32 @@
+site.palette {
+    dark_blue: #051B30;
+    light_blue: #4D6D94;
+    gray: #373B42;
+    dark_green: #8C836D;
+    light_green: #B39D26;
+}
+
+hr {
+    color: #373B42;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #4D6D94;
+}
+
+.header-row {
+    max-height: 3rem;
+}
+
+.header-logo-container{
+    max-height: 3rem;
+}
+
+.header-row-logo {
+    height: 100%;
+    width: auto;
+}
