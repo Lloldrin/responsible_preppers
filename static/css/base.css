@@ -11,7 +11,8 @@ html {
 }
 
 body {
-    height: calc(100vh - 3.5rem);
+    height: calc(100vh - 4rem);
+
 }
 
 hr {
@@ -27,18 +28,24 @@ a:hover {
 }
 
 .header-row {
-    max-height: 3.5rem;
+    max-height: 4rem;
 }
 
 .header-logo-container{
-    max-height: 3.5rem;
+    max-height: 4rem;
 }
 
 .header-row-logo {
-    height: 3.5rem;
+    height: 4rem;
     width: auto;
 }
 
 .top-margin {
-    height: 3.5rem
+    height: 7.5rem
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
 }

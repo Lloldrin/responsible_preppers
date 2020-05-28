@@ -48,7 +48,7 @@
         <div id="lg-topnav" class="row bg-white pt-lg-2 d-none d-lg-flex align-items-center">
             <div class="col-4 header-logo-container text-center">
                 <a href="{% url 'home' %}">
-                    <img src="\media\LogoText_001.png" class="header-row-logo float-right d-block"
+                    <img src="\media\LogoText_001.png" class="header-row-logo mx-auto d-block"
                         alt="site logo, Responsible Preppers">
                 </a>
             </div>
@@ -67,9 +67,21 @@
                     </div>
                 </form>
             </div>
-            <div class="col-4 header-cart">
+            <div class="col-4 header-links">
 
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+
+                   <li class="list-inline-item">
+                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-dark{% endif %} nav-link"
+                        href="">
+                        <div class="text-center">
+                            <div><i class="fas fa-book"></i></div>
+                            <p class="my-0">
+                                Database
+                            </p>
+                        </div>
+                    </a>
+                </li>
 
                     <li class="list-inline-item dropdown">
                         <a class="text-dark nav-link" href="#" id="user-options" data-toggle="dropdown"
@@ -113,7 +125,7 @@
 
         </div>
         <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <nav class="navbar navbar-expand-lg navbar-light w-100 p-0 m-2 border-top border-bottom">
                 {% include 'includes/main_nav.html' %}
             </nav>
         </div>
