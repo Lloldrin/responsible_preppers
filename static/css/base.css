@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
 site.palette {
     dark_blue: #051B30;
     light_blue: #4D6D94;
@@ -12,7 +14,6 @@ html {
 
 body {
     height: calc(100vh - 4rem);
-
 }
 
 hr {
@@ -48,4 +49,17 @@ a:hover {
     .container {
         max-width: 80%;
     }
+}
+
+/* --- index --- */
+
+#index-hero-img {
+    background: url(/media/index_hero.png) no-repeat center center fixed;
+}
+
+#index-hero-header {
+    text-shadow: 3px 3px 6px black;
+    font-family: 'Black Ops One', cursive;
+    font-size: 3rem;
+    margin: 0;
 }
