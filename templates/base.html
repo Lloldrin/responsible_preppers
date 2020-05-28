@@ -45,8 +45,8 @@
 
     <header class="container-fluid fixed-top">
 
-        <div class="row header-row my-3">
-            <div class="col-4 header-logo-container d-none d-md-block">
+        <div id="lg-topnav" class="row bg-white pt-lg-2 d-none d-lg-flex align-items-center">
+            <div class="col-4 header-logo-container text-center">
                 <a href="{% url 'home' %}">
                     <img src="\media\LogoText_001.png" class="header-row-logo float-right d-block"
                         alt="site logo, Responsible Preppers">
@@ -72,7 +72,7 @@
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
 
                     <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                        <a class="text-dark nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -94,7 +94,7 @@
                     </li>
 
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-dark{% endif %} nav-link"
                             href="">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
@@ -111,15 +111,6 @@
                 </ul>
             </div>
 
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-6 col-lg-4 ">
-                <div class="my-3 text-center">
-                    <img src="\media\LogoText_001.png" class="img-fluid mx-auto d-block"
-                        alt="site logo, Responsible Preppers">
-                </div>
-            </div>
         </div>
 
     </header>
