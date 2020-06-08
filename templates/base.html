@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
 
@@ -14,7 +16,7 @@
     {% block core_css %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="static\css\base.css" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -125,7 +127,7 @@
 
         </div>
         <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100 p-0 m-2 border-top border-bottom">
+            <nav class="navbar navbar-expand-lg navbar-light w-100 p-0 mt-2 border-top border-bottom">
                 {% include 'includes/main_nav.html' %}
             </nav>
         </div>
