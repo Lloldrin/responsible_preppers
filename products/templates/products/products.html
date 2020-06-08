@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+<div class="top-margin"></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Products</h1>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="row m-auto">
+        {% for product in products %}
+        <div class="col-sm-6 col-lg-4 col-xl-3 mt-2 mb-2">
+            <div class="card border-0 m-auto" style="width: 18rem;">
+                <img class="card-img-top" src="{{ product.img.url }}" style="alt="Image of {{ product.name }}">
+                <div class="card-body">
+                    <span class="card-title product-name">{{ product.name }}</span>
+                    
+                    
+                </div>
+                <div class="card-footer">
+                    <span class="product-price">${{ product.price }}</h6>
+                    {% if product.rating %}
+                    <span><i class="fas fa-star fa-xs rating-star"></i> {{ product.rating }}/5</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
