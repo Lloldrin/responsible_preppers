@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+<div class="top-margin"></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container content-container">
+    <div class="row">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active"><a href="#">{{ product.category.friendly_name }}</a></li>
+            </ol>
+        </nav>
+
+        <div class="col-12">
+
+            <h2 class="product-name">{{ product.name }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                    {% if product.img %}
+                    <div class="carousel-item active my-auto">
+                        <a href="{{ product.img.url}}" target="_blank"><img class="d-block mh-100" src="{{ product.img.url }}" alt="First Product Image"></a>
+                    </div>
+                    {% endif %}
+
+                    {% if product.img_2 %}
+                    <div class="carousel-item my-auto">
+                        <a href="{{ product.img_2.url}}" target="_blank"><img class="d-block mh-100" src="{{ product.img_2.url }}" alt="Second Product Image"></a>
+                    </div>
+                    {% endif %}
+
+                    {% if product.img_3 %}
+                    <div class="carousel-item my-auto">
+                        <a href="{{ product.img_3.url}}" target="_blank"><img class="d-block mh-100" src="{{ product.img_3.url }}" alt="Third Product Image"></a>
+                    </div>
+                    {% endif %}
+
+                    {% if product.img_4 %}
+                    <div class="carousel-item">
+                        <a href="{{ product.img_4.url}}" class="my-auto" target="_blank"><img class="d-block mh-100" src="{{ product.img_4.url }}" alt="Fourth Product Image"></a>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="my-3">
+                <h1 class="product-price">$ {{ product.price }}</h1>
+                <p class="product-rating"><i class="fas fa-star"></i> {{ product.rating }} / 5</p>
+            </div>
+            <div class="btn btn-lg btn-success my-3"><i class="fas fa-cart-plus"></i> Add to cart</div>
+
+            <ul class="product-key-container my-3">
+
+                {% if product.key_point_1 %}
+                <li class="product-key">{{ product.key_point_1 }}</li></br>
+                {% endif %}
+
+                {% if product.key_point_2 %}
+                <li class="product-key">{{ product.key_point_2 }}</li></br>
+                {% endif %}
+
+                {% if product.key_point_3 %}
+                <li class="product-key">{{ product.key_point_3 }}</li></br>
+                {% endif %}
+
+                {% if product.key_point_4 %}
+                <li class="product-key">{{ product.key_point_4 }}</li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <h6>Description: </h6>
+            <p class="">{{ product.description|linebreaks }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_js %}
+{% endblock %}
