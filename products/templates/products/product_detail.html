@@ -33,33 +33,25 @@
                 <div class="carousel-inner">
                     {% if product.img %}
                     <div class="carousel-item active">
-                        <div class="container">
-                            <img class="d-block w-100" src="{{ product.img.url }}" alt="First Product Image">
-                        </div>
+                            <img class="d-block img-fluid mx-auto" src="{{ product.img.url }}" alt="First Product Image">
                     </div>
                     {% endif %}
 
                     {% if product.img_2 %}
                     <div class="carousel-item">
-                        <div class="container">
-                            <img class="d-block w-100" src="{{ product.img_2.url }}" alt="Second Product Image">
-                        </div>
+                            <img class="d-block img-fluid mx-auto" src="{{ product.img_2.url }}" alt="Second Product Image">
                     </div>
                     {% endif %}
 
                     {% if product.img_3 %}
                     <div class="carousel-item">
-                        <div class="container">
-                            <img class="d-block w-100" src="{{ product.img_3.url }}" alt="Third Product Image"></a>
-                        </div>
+                            <img class="d-block img-fluid mx-auto" src="{{ product.img_3.url }}" alt="Third Product Image"></a>
                     </div>
                     {% endif %}
 
                     {% if product.img_4 %}
                     <div class="carousel-item">
-                        <div class="container">
-                            <img class="d-block w-100" src="{{ product.img_4.url }}" alt="Fourth Product Image">
-                        </div>
+                            <img class="d-block img-fluid mx-auto" src="{{ product.img_4.url }}" alt="Fourth Product Image">
                     </div>
                     {% endif %}
                 </div>
@@ -75,7 +67,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 my-auto">
             <div class="my-3">
                 <h1 class="product-price">$ {{ product.price }}</h1>
                 <p class="product-rating"><i class="fas fa-star"></i> {{ product.rating }} / 5</p>

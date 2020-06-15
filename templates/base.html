@@ -55,7 +55,7 @@
                 </a>
             </div>
             <div class="col-4 header-search-bar">
-                <form method="GET">
+                <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q"
                             placeholder="Search product">
@@ -135,7 +135,7 @@
     </header>
 
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">{{ messages }}</div>
     {% endif %}
 
     {% block page_header %}
@@ -144,7 +144,7 @@
     {% block content %}
     {% endblock %}
 
-    {% block js %}
+    {% block page_js %}
     {% endblock %}
 
 </body>

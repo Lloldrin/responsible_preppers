@@ -2,7 +2,7 @@
     <ul class="navbar-nav navbar-center w-auto mx-auto text-uppercase">
 
         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-fire"></i> Popular</a>
+            <a class="nav-link" href="{% url 'products' %}"><i class="fas fa-fire"></i> Popular</a>
         </li>
 
         <li class="nav-item dropdown">
@@ -11,7 +11,7 @@
                 <i class="fas fa-box-open"></i> Our Kits
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Complete Kits</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=premade_kits">Complete Kits</a>
                 <a class="dropdown-item" href="#">Food & Water Kits</a>
                 <a class="dropdown-item" href="#">First Aid Kits</a>
                 <a class="dropdown-item" href="#">Gear Kits</a>
@@ -25,11 +25,11 @@
                 <i class="fas fa-seedling"></i> Food & Water
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Freeze Dried Foods</a>
-                <a class="dropdown-item" href="#">Food Storage</a>
-                <a class="dropdown-item" href="#">Water Purification</a>
-                <a class="dropdown-item" href="#">Water Storage</a>
-                <a class="dropdown-item" href="#">Self Sufficient Food</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=freeze_dried_foods">Freeze Dried Foods</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=food_storage">Food Storage</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=water_purification">Water Purification</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=water_storage">Water Storage</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=self_sufficient_food">Self Sufficient Food</a>
             </div>
         </li>
 
@@ -39,11 +39,11 @@
                 <i class="fas fa-battery-full"></i> Gear
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Power</a>
-                <a class="dropdown-item" href="#">Lighting</a>
-                <a class="dropdown-item" href="#">Communication</a>
-                <a class="dropdown-item" href="#">Backpacks & Carryalls</a>
-                <a class="dropdown-item" href="#">Camping & Outdoors</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=power">Power</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=lighting">Lighting</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=communication">Communication</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=backpacks">Backpacks & Carryalls</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=camping">Camping & Outdoors</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Gear Kits</a>
             </div>
@@ -55,9 +55,9 @@
                 <i class="fas fa-medkit"></i> First Aid & Sanitation
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">First Aid</a>
-                <a class="dropdown-item" href="#">Gas Masks & Biohazard</a>
-                <a class="dropdown-item" href="#">Sanitation</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=first_aid">First Aid</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=gas_masks">Gas Masks & Biohazard</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=sanitation">Sanitation</a>
             </div>
         </li>
 
@@ -67,9 +67,9 @@
                 <i class="fas fa-tools"></i> Tools
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Knives</a>
-                <a class="dropdown-item" href="#">Hatchets & Saws</a>
-                <a class="dropdown-item" href="#">Multitools</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=knives">Knives</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=hatchets_saws">Hatchets & Saws</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=multitool">Multitools</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Tool Kits</a>
             </div>
