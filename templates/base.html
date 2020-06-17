@@ -48,12 +48,14 @@
     <header class="container-fluid fixed-top">
 
         <div id="lg-topnav" class="row bg-white pt-lg-2 d-none d-lg-flex align-items-center">
+
             <div class="col-4 header-logo-container text-center">
                 <a href="{% url 'home' %}">
                     <img src="\media\LogoText_001.png" class="header-row-logo mx-auto d-block"
                         alt="site logo, Responsible Preppers">
                 </a>
             </div>
+
             <div class="col-4 header-search-bar">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
@@ -69,12 +71,13 @@
                     </div>
                 </form>
             </div>
+
             <div class="col-4 header-links">
 
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
 
                    <li class="list-inline-item">
-                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-dark{% endif %} nav-link"
+                    <a class="text-dark nav-link"
                         href="">
                         <div class="text-center">
                             <div><i class="fas fa-book"></i></div>
@@ -108,13 +111,13 @@
                     </li>
 
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-dark{% endif %} nav-link"
+                        <a class="text-dark nav-link"
                             href="{% url 'view_cart' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
+                                    ${{ total|floatformat:2 }}
                                     {% else %}
                                     $0.00
                                     {% endif %}
