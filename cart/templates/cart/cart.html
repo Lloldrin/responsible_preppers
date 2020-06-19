@@ -21,6 +21,53 @@
     <div class="row">
         <div class="col d-flex justify-content-center">
             {% if cart_items %}
+            <table class="table text-center text-justify">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Product</th>
+                        <th scope="col"></th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Subtotal</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                    <tr>
+                        <td class="w-10">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                <img class="img-fluid" src="{{ item.product.img.url }}">
+                            </a>
+                        </td>
+                        <td class="align-middle">
+                            <p>{{ item.product.name }}</p>
+                        </td>
+                        <td></td>
+                        <td class="align-middle">
+                            <p>${{ item.product.price }}</p>
+                        </td>
+                        <td class="align-middle">
+                            <p>{{ item.quantity }}</p>
+                        </td>
+                        <td class="align-middle">
+                            <p>${{ item.product.price }}</p>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="8" class="text-right">
+                            <h6>Items: ${{ total|floatformat:2 }}</h6>
+                            <h6>Shipping: ${{ shipping|floatformat:2 }}</h6>
+                            <h6>Total: ${{ grand_total|floatformat:2 }}</h6>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             {% else %}
             <p>Your shopping cart is empty</p>
             <div class="btn btn-success">Add some items!</div>
