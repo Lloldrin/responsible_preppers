@@ -110,3 +110,25 @@ a:hover {
     -moz-transition: opacity .40s ease-in-out;
     -webkit-transition: opacity .40s ease-in-out;
 }
+
+.qty_input {
+    text-align: center;
+}
+
+/* css to disable default input form buttons taken from https://www.thatstevensguy.com/programming/disable-arrows-on-number-inputs/ */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.delete-item {
+    cursor: pointer;
+}
+
+.delete-item:hover {
+    color: #4D6D94 !important;
+}
