@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load mathfilters %}
 
 {% block page_header %}
 
@@ -80,7 +81,7 @@
                             </form>
                         </td>
                         <td class="align-middle">
-                            <p>${{ item.product.price }}</p>
+                            <p>${{ item.product.price | mul:item.quantity }}</p>
                         </td>
                         <td></td>
                         <td class="align-middle text-center">
