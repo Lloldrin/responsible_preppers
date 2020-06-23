@@ -132,3 +132,18 @@ input[type="number"] {
 .delete-item:hover {
     color: #4D6D94 !important;
 }
+
+.message-container {
+    position: fixed;
+    top: 2rem;
+    right: 1rem;
+    z-index: 9999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
