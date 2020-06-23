@@ -135,8 +135,8 @@ input[type="number"] {
 
 .message-container {
     position: fixed;
-    top: 2rem;
-    right: 1rem;
+    top: 3rem;
+    right: 2rem;
     z-index: 9999;
 }
 
