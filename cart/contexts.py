@@ -20,9 +20,9 @@ def cart_contents(request):
             'product' : product,
         })
 
-    if total < settings.FREE_SHIPPING_TRESHOLD:
+    if total < settings.FREE_SHIPPING_THRESHOLD:
         shipping = total * Decimal(settings.STANDARD_SHIPPING_PERCENTAGE / 100)
-        free_shipping_remaining = settings.FREE_SHIPPING_TRESHOLD - total
+        free_shipping_remaining = settings.FREE_SHIPPING_THRESHOLD - total
     else:
         shipping = 0
         free_shipping_remaining = 0
@@ -36,7 +36,7 @@ def cart_contents(request):
         'product_count' : product_count,
         'shipping' : shipping,
         'free_shipping_remaining' : free_shipping_remaining,
-        'free_shipping_treshhold' : settings.FREE_SHIPPING_TRESHOLD,
+        'free_shipping_treshhold' : settings.FREE_SHIPPING_THRESHOLD,
         'total' : total,
         'grand_total' : grand_total, 
 
