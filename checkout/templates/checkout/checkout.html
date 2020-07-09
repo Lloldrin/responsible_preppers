@@ -134,9 +134,7 @@
 
 {% block page_js %}
 {{ block.super }}
-{% include 'products\includes\script_quantity_update.html' %}
-<script type="text/javascript">
-    var stripe = Stripe('pk_test_51H03tUJAKA0kPb5CKMb5wfsu1odaz3axUE8nO8BSTGjbutDwBspCJgmLfbr6482eYV6ytjkFWnDby6Yk9myuPzZF00TBNiVtSv');
-    var elements = stripe.elements();
-</script>
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/checkout_stripe.js' %}"></script>
 {% endblock %}
