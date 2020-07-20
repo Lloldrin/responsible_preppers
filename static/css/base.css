@@ -147,3 +147,7 @@ input[type="number"] {
 .toast-capper {
     height: 2px;
 }
+
+.inline-form {
+    display: inline-block;
+}
