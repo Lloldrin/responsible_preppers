@@ -2,7 +2,10 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+
+from .forms import ProductForm
 from .models import Product, Category
+
 
 # Create your views here.
 def all_products(request):
@@ -59,10 +62,32 @@ def all_products(request):
 def product_detail(request, product_id):
     
     """This view returns the selected product details"""
+    template = 'products/product_detail.html'
 
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product' : product,
     }
-    return render(request, 'products/product_detail.html', context)
+    return render(request, template, context)
+
+def add_product(request):
+
+    if request.method == 'POST':
+        #Including request.FILES makes sure that we get the images as well as the form data
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product added successfully!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Please make sure the form is correct!')
+    else: 
+        form = ProductForm()
+
+    template = 'products/add_product.html'
+
+    context = {
+        'form' : form
+    }
+    return render(request, template, context)
