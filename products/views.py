@@ -9,7 +9,6 @@ from .models import Product, Category
 
 # Create your views here.
 def all_products(request):
-    
     """This view returns all products, including searches and sorting"""
 
     products = Product.objects.all()
@@ -38,43 +37,45 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, 'You didn\'t enter any search parameters!')
+                messages.error(
+                    request, 'You didn\'t enter any search parameters!')
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(category__friendly_name__icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(
+                category__friendly_name__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
 
     context = {
-        'products' : products,
-        'search_term' : query,
-        'current_categories' : categories,
-        'current_sorting' : current_sorting,
+        'products': products,
+        'search_term': query,
+        'current_categories': categories,
+        'current_sorting': current_sorting,
     }
-    
+
     return render(request, 'products/products.html', context)
 
+
 def product_detail(request, product_id):
-    
     """This view returns the selected product details"""
     template = 'products/product_detail.html'
 
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
-        'product' : product,
+        'product': product,
     }
     return render(request, template, context)
+
 
 def add_product(request):
 
     if request.method == 'POST':
-        #Including request.FILES makes sure that we get the images as well as the form data
+        # Including request.FILES makes sure that we get the images as well as the form data
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
@@ -82,12 +83,34 @@ def add_product(request):
             return redirect(reverse('add_product'))
         else:
             messages.error(request, 'Please make sure the form is correct!')
-    else: 
+    else:
         form = ProductForm()
 
     template = 'products/add_product.html'
 
     context = {
-        'form' : form
+        'form': form
     }
+
+    return render(request, template, context)
+
+
+def edit_product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product updated successfully!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Please make sure the form is correct!')
+    form = ProductForm(instance=product)
+    template = 'products/edit_product.html'
+    context = {
+        'form' : form,
+        'product' : product
+    }
+    
     return render(request, template, context)

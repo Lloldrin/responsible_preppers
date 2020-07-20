@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+<div class="top-margin"></div>
+
+{% endblock %}
+
+{% block content %}
+<div id="checkout-container" class="container">
+    <div class="row">
+        <div class="col-12 col-lg-6 mx-auto">
+            <hr>
+            <h2 class="logo-font">Product Management</h2>
+            <h5 class="text-muted">Edit Products</h5>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6 mx-auto">
+            <form action="{% url 'edit_product' product.id %}" method="POST" enctype="multipart/form-data" class="form mb-2">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div class="text-right">
+                <a href="{% url 'add_product' %}" class="btn">Clear Form</a>
+                <button type="submit" class="submit_btn">Update</button>
+            </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
