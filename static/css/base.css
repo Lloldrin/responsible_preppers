@@ -200,7 +200,7 @@ input[type="number"] {
 .btn-blue {
     color: white;
     background-color: #B39D26;
-    border: 1px solid #8C836D;
+    border: none;
     transition: ease-in-out .2s;
     font-weight: 200;
 }
