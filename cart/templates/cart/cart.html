@@ -19,9 +19,10 @@
         </div>
     </div>
 
+
+    {% if cart_items %}
     <div class="row">
         <div class="col d-flex justify-content-center">
-            {% if cart_items %}
             <table class="table text-center text-justify">
                 <thead>
                     <tr>
@@ -116,12 +117,18 @@
                     </tr>
                 </tbody>
             </table>
-            {% else %}
-            <p>Your shopping cart is empty</p>
-            <div class="btn btn-success">Add some items!</div>
-            {% endif %}
         </div>
     </div>
+    {% else %}
+    <div class="row cart-empty">
+        <div class="col-12 text-center my-auto">
+            <h6>Your shopping cart is empty</h6>
+            <a href="{% url 'products' %}"><button class="btn-blue my-3">Add some items!</button></a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+</div>
 </div>
 {% endblock %}
 

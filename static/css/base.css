@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-
 html {
     height: 100%;
 }
@@ -53,13 +52,13 @@ a:hover {
 }
 
 .text-dark-blue a {
-        color: #051B30;
-        transition: ease-in-out 0.2s;
+    color: #051B30;
+    transition: ease-in-out 0.2s;
 }
 
 .text-dark-blue a:hover {
-        color: #4D6D94;
-        transition: ease-in-out 0.2s;
+    color: #4D6D94;
+    transition: ease-in-out 0.2s;
 }
 
 /* --- index --- */
@@ -121,11 +120,12 @@ a:hover {
 }
 
 /* css to disable default input form buttons taken from https://www.thatstevensguy.com/programming/disable-arrows-on-number-inputs/ */
+
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
- 
+
 input[type="number"] {
     -moz-appearance: textfield;
 }
@@ -167,29 +167,46 @@ input[type="number"] {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
+}
 
+/* --- Buttons --- */
 
-  /* --- Buttons --- */
+.shop-now {
+    height: 3rem;
+    width: 12rem;
+    border-radius: 0;
+    background-color: rgba(200, 200, 200, 0.8);
+    font-size: 1.5rem;
+    box-shadow: 3px 3px 7px black;
+    font-weight: 300;
+}
 
-  .shop-now {
-      height: 3rem;
-      width: 12rem;
-      border-radius: 0;
-      background-color: rgba(200, 200, 200, 0.8);
-      font-size: 1.5rem;
-      box-shadow: 3px 3px 7px black;
-      font-weight: 300;
-  }
+.shop-now:hover {
+    background-color: #051B30;
+}
 
-  .shop-now:hover {
-      background-color: #051B30;
-  }
+.shop-now a {
+    color: white;
+}
 
-  .shop-now a {
-      color: white;
-  }
+.shop-now a:hover {
+    text-decoration: none;
+}
 
-  .shop-now a:hover {
-      text-decoration: none;
-  }
+.cart-empty {
+    height: 50vh
+}
+
+.btn-blue {
+    color: white;
+    background-color: #B39D26;
+    border: 1px solid #8C836D;
+    transition: ease-in-out .2s;
+    font-weight: 200;
+}
+
+.btn-blue:hover {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: black
+}
