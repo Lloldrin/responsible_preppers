@@ -1,0 +1,1 @@
+Order confirmation Responsible Preppers Order: {{ order.order_number }}
