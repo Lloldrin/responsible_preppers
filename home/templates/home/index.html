@@ -9,14 +9,34 @@
 
 {% block content %}
 
-<div class="container h-100">
-    <div id="index-hero-img" class="row h-100">
-        <div class="col-12 my-auto">
-            <div class="text-light ml-4">
-            <h1 id="index-hero-header" class="text-uppercase">Prepare and learn <br>Feel secure</h1>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <div class="carousel-item active" style="background-image:    linear-gradient(to bottom, rgba(148, 163, 248, 0.11), rgba(50, 50, 50, 0.6)), url('/media/index_hero.png')">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-3 text-light index-carousel-header">Get Prepared</h2>
+          <button class="btn shop-now text-center"><a href="{% url 'products' %}">Shop Now</a></button>
         </div>
+      </div>
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/bF2vsubyHcQ/1920x1080')">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4 text-light index-carousel-header">Second Slide</h2>
+          <p class="lead">This is a description for the second slide.</p>
         </div>
+      </div>
     </div>
-</div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  </div>
 
+  <hr>
+
+  
 {% endblock %}
