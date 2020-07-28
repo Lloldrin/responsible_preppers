@@ -1,11 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-site.palette {
-    dark_blue: #051B30;
-    light_blue: #4D6D94;
-    gray: #373B42;
-    dark_green: #8C836D;
-    light_green: #B39D26;
-}
 
 html {
     height: 100%;
