@@ -21,7 +21,7 @@
 
 
     {% if cart_items %}
-    <div class="row">
+    <div class="row d-none d-lg-block">
         <div class="col d-flex justify-content-center">
             <table class="table text-center text-justify">
                 <thead>
@@ -117,6 +117,67 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <div class="row d-lg-none">
+        <div class="col justify-content-center">
+            {% for item in cart_items %}
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top mt-4" src="{{ item.product.img.url }}" alt="Card image cap">
+                <div class="card-body p-1">
+                    <h4 class="card-title text-center">{{ item.product.name }}</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Price: ${{ item.product.price }}</li>
+                    <li class="list-group-item">Qty: <form action="{% url 'adjust_cart' item.item_id %}"
+                            class="update-form align-middle" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group w-75 mx-auto">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button class="decrease-qty btn btn-black rounded-0 update-qty"
+                                            data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}">
+                                            <span class="icon">
+                                                <i class="fas fa-minus fa-sm"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <input class="form-control qty_input" type="number" name="quantity"
+                                        value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
+                                        id="id_qty_{{ item.item_id }}">
+                                    <div class="input-group-append">
+                                        <button class="increase-qty btn btn-black rounded-0 update-qty"
+                                            data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
+                                            <span class="icon">
+                                                <i class="fas fa-plus fa-sm"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-top"><span>Total:
+                            ${{ item.product.price | mul:item.quantity }}</span>
+                        <span> <a class="delete-item" id="remove_{{ item.item_id }}"><i
+                                    class="fas fa-times"></i></a></span>
+
+                    </li>
+                </ul>
+            </div> 
+
+            <hr>
+            {% endfor %}
+            <div class="col-12">
+                <h6>Items: ${{ total|floatformat:2 }}</h6>
+                <h6>Shipping: ${{ shipping|floatformat:2 }}</h6>
+                <h6>Total: ${{ grand_total|floatformat:2 }}</h6>
+
+                <a href="{% url 'checkout' %}" class="btn border-dark rounded-0 btn-sm mt-3">
+                    <span class="text-uppercase">Secure Checkout</span>
+                    <span class="icon"><i class="fas fa-lock"></i></span></a>
+            </div>
         </div>
     </div>
     {% else %}
