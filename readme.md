@@ -4,7 +4,7 @@ This is a webshop for selling gear aimed at the prepper community.
 
 ## UX
 
-![UX Example](https://github.com/Lloldrin/Milestone3/blob/master/assets/readme/responsiveness.PNG)
+![UX Example](https://github.com/Lloldrin/responsible-preppers/blob/master/assets/readme/responsiveness.PNG)
 
 ### User Stories
  
@@ -56,9 +56,10 @@ It will be a series of cards divided into categories with clear instructions on 
 
 ### Skeleton
 
-![Wireframe1]()
-![Wireframe2]()
-![Wireframe3]()
+![Wireframe1](https://github.com/Lloldrin/responsible-preppers/blob/master/assets/readme/home_page.jpg)
+![Wireframe2](https://github.com/Lloldrin/responsible-preppers/blob/master/assets/readme/product_page.jpg)
+![Wireframe3](https://github.com/Lloldrin/responsible-preppers/blob/master/assets/readme/product_detail.jpg)
+![Wireframe4](https://github.com/Lloldrin/responsible-preppers/blob/master/assets/readme/cart_page.jpg)
 
 ### Surface
 The color scheme will be reminiscent of hiking in the mountains. Many prepper sites have a feel of doom and gloom. Responsible Preppers are here to make sure that people see the value of prepping, but to also make them understand that if you’ve properly prepared then a scenario where you have to be self sufficient then it’s not supposed to feel like a doom and gloom scenario. If you are properly prepared then you should almost feel like it was unnecessary because everything in your life almost stayed the same. This is in case of minor emergencies, not in true SHTF scenarios, but those are exceedingly rare and is not the focus for a large portion of everyday preppers.
@@ -159,6 +160,3 @@ The site is hosted on Heroku.
     * This follows the guide found [here](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html) and Code Institutes course.
  
 Since the site relies on environment variables that are not open it's not possible to run the site locally with full functionality. 
-
-## Credits
-
